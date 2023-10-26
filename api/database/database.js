@@ -7,7 +7,8 @@ mongoose.set('strictQuery', true)
 
 async function connect() {
   try {
-    await mongoose.connect(process.env.MONGO_URI)
+    await mongoose.connect("mongodb://localhost:27017/demosetup")
+    // await mongoose.connect(process.env.MONGO_URI)
     print('connect DB successfully', OutputType.SUCCESS)
   } catch (error) {
     const { code } = error
